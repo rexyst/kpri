@@ -1,6 +1,11 @@
 <?php
-$nip = $_POST['nip'];
-$bulan = $_POST['bulan'];
+// detail identitas
+$penyetor = $_POST['nip'];
+$bulan = $_POST['bulan']."-01";
+$tanggal = $_POST['tanggal'];
+$admin = $_POST['admin'];
+
+// detil nominal
 $spnominal = $_POST['sp-nominal'];
 $spket = $_POST['sp-keterangan'];
 $swnominal = $_POST['sw-nominal'];
@@ -35,19 +40,18 @@ $seragamNominal = $_POST['seragam-nominal'];
 $seragamKet = $_POST['seragam-keterangan'];
 $jumlah = $_POST['jumlah-nominal'];
 
-function addTrx($penyetor, $bulan, $jumlah, $tanggal, $admin){
-    require_once('../../config.php');
+require_once('../../../config.php');
     $sql = "INSERT INTO transaksi (penyetor, bulan, jumlah, tanggal, admin) values (
         ".$penyetor.", '".$bulan."', ".$jumlah.", '".$tanggal."', ".$admin."
     )";
-    $con->query($sql);
-}
-
-function simpan($jenis, $jumlah, $ket, $tanggal){
-    $getSql = "SELECT ke FROM `bke` WHERE id_peminjaman = 8 order by id desc limit 1";
-
-    $sql = "INSERT INTO ".$jenis." () values (
-
-    )";
-}
+    $result = $con->query($sql);
+    if(!$result) {
+        ?>
+            <script type="text/javascript">alert('Gagal menambah data.'); window.open('<?php echo $siteurl; ?>admin/tambah/setoran', '_SELF');</script>
+        <?php
+    } else {
+        ?>
+            <script type="text/javascript">alert('Berhasil menambah data.'); window.open('<?php echo $siteurl; ?>admin/', '_SELF');</script>
+        <?php
+    }
 ?>

@@ -3936,3 +3936,18 @@
 .tombol-cari:hover {
     background-color: rgb(30 168 168);
 }
+
+.data_tanggal_setoran {
+    position: absolute;
+    left: 188px;
+    border: none;
+    background: none;
+    font-family: Roboto;
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+.admin_setor {
+    display: none !important;
+}

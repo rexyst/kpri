@@ -81,13 +81,29 @@ $nick = $fullName[0];
 </div>
 
 <div class=main_container>
+<form action="simpan.php" method="POST" enctype="multipart/form-data">
 <div class="container_background"></div><span  class="teks_judul">TAMBAH SETORAN ANGGOTA</span>
 <div class=user_data_container>
-<div class=nip><span  class="teks_nip">NIP</span><span  class="data_nip">: </span><input class="input-nip ajuan-input" name="nip" id="nip" type="number" placeholder="Masukkan NIP"><button class="tombol-cari" onclick="searchAkun()">Cari</button></div>
-<div class=nama><span  class="teks_nama">Nama</span><span  class="data_nama" id="data_nama">:</span></div>
-<form action="simpan.php" method="POST" enctype="multipart/form-data">
-<div class=bulan><span  class="teks_bulan">Bulan</span><span  class="data_bulan" id="data_bulan">:</span><input class="input-bulan ajuan-input" id="bulan" name="bulan" type="month"></div>
-<div class=tanggal_transaksi><span  class="teks_tanggal_transaksi">Tanggal Transaksi</span><span  class="data_tanggal_transaksi">: <?php echo date("d M Y"); ?></span></div>
+<div class=nip>
+    <span  class="teks_nip">NIP</span>
+    <span  class="data_nip">: </span>
+    <input class="input-nip ajuan-input" name="nip" id="nip" type="number" placeholder="Masukkan NIP" onkeyup="searchAkun()">
+</div>
+<div class=nama>
+    <span  class="teks_nama">Nama</span>
+    <span  class="data_nama" id="data_nama">:</span>
+</div>
+<div class=bulan>
+    <span  class="teks_bulan">Bulan</span>
+    <span  class="data_bulan" id="data_bulan">:</span>
+    <input class="input-bulan ajuan-input" id="bulan" name="bulan" type="month" onchange="datechange(this.value)">
+</div>
+<div class=tanggal_transaksi>
+    <span  class="teks_tanggal_transaksi">Tanggal Transaksi</span>
+    <span  class="data_tanggal_transaksi">:</span>
+    <input class="data_tanggal_setoran" id="tanggal" name="tanggal" type="date" readonly value="<?php echo date("Y-m-d"); ?>">
+    <input class="admin_setor" name="admin" readonly value="<?php echo $_SESSION['nip']; ?>">
+</div>
 </div>
 <div class=tabel_setoran>
 <div class=tabel_header>
@@ -631,6 +647,11 @@ function searchAkun(){
     a.addEventListener('click', function(){
         menu('beranda');
     });
+</script>
+<script>
+    function datechange(val){
+        console.log(val);
+    }
 </script>
 <script>
 function jumlah(){
