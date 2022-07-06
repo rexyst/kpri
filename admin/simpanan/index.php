@@ -34,13 +34,10 @@ $nick = $fullName[0];
 
 <body>
     <div class=beranda>
-        <div class=header_container>
-            <div class="logo"></div>
-            <span class="teks_koperasi">KOPERASI PEGAWAI REPUBLIK INDONESIA</span>
-            <span class="teks_nama_koperasi">WIYATA USAHA</span>
-            <span class="teks_alamat_koperasi">Jl. Krakatau No.216, Kencong, Kabupaten Jember, Jawa Timur 68167 Telepon:
-                (0336) 321386</span>
-            <div class="garis_header"></div>
+    <div class=header_container>
+            <?php 
+            include($siteurl.'comp/header.html');
+            ?>
         </div>
         <div class=side_menu>
             <div class="side_menu_background"></div>

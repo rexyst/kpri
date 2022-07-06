@@ -3,7 +3,7 @@ $host = "127.0.0.1";
 $username = "root";
 $pass = "";
 $db = "kpri";
-$siteurl = "http://127.0.0.1/kpri/";
+$siteurl = "http://127.0.0.1:80/kpri/";
 $author = "RAMA";
 
 $con = mysqli_connect($host, $username, $pass, $db);

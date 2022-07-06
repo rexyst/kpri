@@ -34,12 +34,10 @@ include('getData.php');
 <body>
 <div class=melihat_detail_transaksi>
 <div class=header_container>
-<img class="logo" src="<?php echo $siteurl; ?>assets/logo.png">
-<span  class="teks_koperasi">KOPERASI PEGAWAI REPUBLIK INDONESIA</span>
-<span  class="teks_nama_koperasi">WIYATA USAHA</span>
-<span  class="teks_alamat_koperasi">Jl. Krakatau No.216, Kencong, Kabupaten Jember, Jawa Timur 68167 Telepon: (0336) 321386</span>
-<div class="garis_header"></div>
-</div>
+            <?php 
+            include($siteurl.'comp/header.html');
+            ?>
+        </div>
 <div class=side_menu>
 <div class="side_menu_background"></div>
 <div class=beranda_menu>
